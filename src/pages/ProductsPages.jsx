@@ -16,7 +16,7 @@ const ProductPages = () => {
   return (
     <>
       <div className='container'>
-        <div className="row">
+        <div className="row gy-3">
           <div className="col-12">
             <h1>Prodotti</h1>
           </div>
@@ -30,6 +30,7 @@ const ProductPages = () => {
                     </h2>
                   </div>
                   <div className="card-body">
+                    <img src={product.image} alt="" />
                     <p>- {product.category}</p>
                     <p>- {product.price}&euro;</p>
                   </div>
