@@ -17,3 +17,15 @@ Homepage (con un messaggio di benvenuto o immagine promozionale)
 Chi siamo
 Prodotti (pagina che mostrerà la lista dei prodotti prendendoli da https://fakestoreapi.com/products)
 Implementiamo una Navbar visibile in tutte le pagine per navigare tra di esse
+
+===
+
+Consegna 2
+
+Completiamo il nostro routing aggiungendo la pagina di dettaglio prodotto!
+
+Obiettivi
+
+ella pagina Prodotti, ogni prodotto deve essere cliccabile (usa <Link>)
+Aggiungiamo la pagina di dettaglio per ogni prodotto, con le informazioni prese da https://fakestoreapi.com/products/:id
+Configuriamo il routing dinamico per leggere l’id del prodotto dalla URL
