@@ -1,10 +1,39 @@
-import React from 'react'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 const ProductsListPage = () => {
-  return (
-    <div>
+  const [products, setProducts] = useState([])
 
-    </div>
+  useEffect(() => {
+    axios.get(`https://fakestoreapi.com/products`).then((resp) => {
+      setProducts(resp.data)
+    })
+  }, [])
+
+  return (
+    <>
+      <div className='container'>
+        <div className="row gy-3">
+          <div className="col-12">
+            <h1>Prodotti</h1>
+          </div>
+          {products.map(product => {
+            return (
+              <div className="col-4" key={product.id}>
+                <div className="card">
+                  <h2>{product.title}</h2>
+                  <div className="card-body">
+                    <img src={product.image} alt="" />
+                    <p>- {product.category}</p>
+                    <p>- {product.price}&euro;</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </>
   )
 }
 
