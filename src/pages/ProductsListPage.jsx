@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const ProductsListPage = () => {
   const [products, setProducts] = useState([])
@@ -21,7 +22,7 @@ const ProductsListPage = () => {
             return (
               <div className="col-4" key={product.id}>
                 <div className="card">
-                  <h2>{product.title}</h2>
+                  <h2><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
                   <div className="card-body">
                     <img src={product.image} alt="" />
                     <p>- {product.category}</p>

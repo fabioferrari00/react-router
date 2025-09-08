@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
 import ProductsListPage from "./pages/ProductsListPage";
 import DefaultLayout from "./layouts/DefaultLayout";
+import DetailProductPage from "./pages/DetailProductPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/about-us" element={<AboutUsPage />} ></Route>
           <Route path="/products">
             <Route index element={<ProductsListPage />} ></Route>
+            <Route path=":id" element={<DetailProductPage />} ></Route>
           </Route>
         </Route>
       </Routes >
