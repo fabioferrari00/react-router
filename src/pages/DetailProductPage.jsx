@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -8,12 +8,14 @@ const DetailProductPage = () => {
   const { id } = useParams()
   const [product, setProduct] = useState({})
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
       setProduct(resp.data)
     })
 
-  }, [])
+  }, [id, navigate])
   return (
     <div className='container'>
       <div className="row">
@@ -24,6 +26,23 @@ const DetailProductPage = () => {
           <p>- {product.category}</p>
           <p>- {product.description}</p>
           <Link to="/products" className='btn btn-primary'>Torna a tutti i prodotti</Link>
+        </div>
+        <div className="col-12">
+          <div className="d-flex justify-content-between">
+            <div className="pagination-prod">
+              <button
+                className='pagination-btn-prod'
+                onClick={() => navigate(`/products/${parseInt(id) - 1}`)}
+                disabled={parseInt(id) === 1 ? true : false}>
+                Precedente
+              </button>
+              <button
+                className='pagination-btn-prod'
+                onClick={() => navigate(`/products/${parseInt(id) + 1}`)} >
+                Successivo
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

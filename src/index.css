@@ -17,3 +17,13 @@ header a.active {
   min-height: 650px;
   max-height: 650px;
 }
+
+.pagination-btn-prod {
+  background-color: green;
+  color: white;
+  padding: 10px;
+}
+
+.pagination-prod {
+  justify-content: space-between;
+}
