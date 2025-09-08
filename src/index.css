@@ -1,0 +1,8 @@
+header a {
+  text-decoration: none;
+}
+
+header a.active {
+  background-color: black;
+  color: white;
+}
