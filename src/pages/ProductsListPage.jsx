@@ -22,9 +22,10 @@ const ProductsListPage = () => {
             return (
               <div className="col-4" key={product.id}>
                 <div className="card">
-                  <h2><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
+                  <div className="card-header">
+                    <h2><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
+                  </div>
                   <div className="card-body">
-                    <img src={product.image} alt="" />
                     <p>- {product.category}</p>
                     <p>- {product.price}&euro;</p>
                   </div>

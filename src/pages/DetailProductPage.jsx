@@ -29,19 +29,17 @@ const DetailProductPage = () => {
         </div>
         <div className="col-12">
           <div className="d-flex justify-content-between">
-            <div className="pagination-prod">
-              <button
-                className='pagination-btn-prod'
-                onClick={() => navigate(`/products/${parseInt(id) - 1}`)}
-                disabled={parseInt(id) === 1 ? true : false}>
-                Precedente
-              </button>
-              <button
-                className='pagination-btn-prod'
-                onClick={() => navigate(`/products/${parseInt(id) + 1}`)} >
-                Successivo
-              </button>
-            </div>
+            <button
+              className='pagination-btn-prod'
+              onClick={() => navigate(`/products/${parseInt(id) - 1}`)}
+              disabled={parseInt(id) === 1 ? true : false}>
+              Precedente
+            </button>
+            <button
+              className='pagination-btn-prod'
+              onClick={() => navigate(`/products/${parseInt(id) + 1}`)} >
+              Successivo
+            </button>
           </div>
         </div>
       </div>
